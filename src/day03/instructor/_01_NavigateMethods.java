@@ -8,14 +8,14 @@ public class _01_NavigateMethods {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\mder\\OneDrive\\Documents\\Selenium\\Drivers\\chromedriver_win32_updated\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
 
-        //1. Navigate methods
+        //NAVIGATION METHODS
+        //1. Navigate to
 
-        //action 2 to click on one of the videos
+        //2. Navigate back
 
-        //2. navigate() vs get()
+        //3. Navigate refresh
 
-
-        //action 2 to click on one of the videos
+        //4. navigate() vs get()
 
 
     }
