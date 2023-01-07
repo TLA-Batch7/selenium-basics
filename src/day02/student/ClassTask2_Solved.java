@@ -23,7 +23,7 @@ public class ClassTask2_Solved {
      * 6. Compare above titles and print out which one has the most letters
      */
     public static void main(String[] args) {
-        System.setProperty("webdriver.chrome.driver", "/Users/kuba/TLA/Selenium/B-7/libs/drivers/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\mder\\OneDrive\\Documents\\Selenium\\Drivers\\chromedriver_win32_updated\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("http://automation.techleadacademy.io");
         String title1 = driver.getTitle();
@@ -37,6 +37,24 @@ public class ClassTask2_Solved {
         System.out.println(title2);
         System.out.println(returnNumberOfWords(title2));
         driver.close();
+
+        driver = new ChromeDriver();
+        driver.get("https://amazon.com");
+        String title3 = driver.getTitle();
+        System.out.println(title3);
+        System.out.println(returnNumberOfWords(title3));
+        driver.close();
+
+
+        if (title1.length() > title2.length() && title1.length() > title3.length()) {
+            System.out.println("This title has the most letters: " + title1);
+        }
+        if (title2.length() > title1.length() && title2.length() > title3.length()) {
+            System.out.println("This title has the most letters: " + title2);
+        } else {
+            System.out.println("This title has the most letters: " + title3);
+        }
+
 
 
     }
