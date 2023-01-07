@@ -9,6 +9,5 @@ public class ClassTask2 {
          * 3. Print out text of the "Images" link on top right corner of the page
          */
 
-
     }
 }
