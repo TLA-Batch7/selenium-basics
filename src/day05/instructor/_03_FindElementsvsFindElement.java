@@ -15,10 +15,18 @@ public class _03_FindElementsvsFindElement {
 
         //1. What is the difference between findElement() vs findElements()
         // Nav buttons on practice home page
+        WebElement element = driver.findElement(By.className("navbar-brand"));
+        System.out.println(element.getText());
 
+        List<WebElement> list = driver.findElements(By.className("navbar-brand"));
+        for(WebElement each: list){
+            //System.out.println(each.getText());
+        }
+        System.out.println(list.size());
 
 
         //2. Print specific item
+        System.out.println(list.get(6).getText());
 
 
         driver.close();
