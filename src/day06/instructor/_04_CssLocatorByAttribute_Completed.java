@@ -11,10 +11,10 @@ public class _04_CssLocatorByAttribute_Completed {
         driver.get("http://automation.techleadacademy.io/#/");
 
         // tag + [attribute=value] => print PHP Travels text of the link
-
+        System.out.println(driver.findElement(By.cssSelector("a[href='https://phptravels.com/demo/']")).getText());
 
         //print header
-
+        System.out.println(driver.findElement(By.cssSelector("h1[name=h1-text]")).getText());
 
         driver.close();
 
