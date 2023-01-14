@@ -14,10 +14,14 @@ public class ClassTask2_Solved {
      */
 
     public static void main(String[] args) {
-        System.setProperty("webdriver.chrome.driver", "/Users/kuba/TLA/Selenium/B-7/libs/drivers/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\mder\\OneDrive\\Documents\\Selenium\\Drivers\\chromedriver_win32_updated\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+
         driver.get("http://automation.techleadacademy.io/#/selectors");
 
+        List<WebElement> subList = driver.findElements(By.cssSelector("div[class^='sub']"));
+        subList.forEach(each -> System.out.println(each.getText()));
 
         driver.close();
     }
