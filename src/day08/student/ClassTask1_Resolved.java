@@ -16,10 +16,15 @@ public class ClassTask1_Resolved {
      */
 
     public static void main(String[] args) {
-        System.setProperty("webdriver.chrome.driver", "/Users/kuba/TLA/Selenium/B-7/libs/drivers/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\mder\\OneDrive\\Documents\\Selenium\\Drivers\\chromedriver_win32_updated\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+
         driver.get("http://automation.techleadacademy.io/#/selectors");
 
+        List<WebElement> porscheList = driver.findElements(By.cssSelector("#porsche > .vehicle-types > div"));
+        System.out.println(porscheList.size());
+        porscheList.forEach(each -> System.out.println(each.getText()));
 
         driver.close();
     }

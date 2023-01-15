@@ -14,10 +14,14 @@ public class ClassTask4_Solved {
      */
 
     public static void main(String[] args) {
-        System.setProperty("webdriver.chrome.driver", "/Users/kuba/TLA/Selenium/B-7/libs/drivers/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\mder\\OneDrive\\Documents\\Selenium\\Drivers\\chromedriver_win32_updated\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+
         driver.get("https://www.amazon.com/");
 
+        List<WebElement> list = driver.findElements(By.cssSelector("span[class*='Desc']"));
+        list.forEach(each -> System.out.println(each.getText()));
 
         driver.close();
     }
