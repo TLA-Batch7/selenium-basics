@@ -12,6 +12,7 @@ public class _01_ClassTask_Solved {
         /**
          * 1. navigate to http://automation.techleadacademy.io/#/
          * 2. print out all nav bar buttons
+         * 3. print out Select-class button text only
          */
 
         System.setProperty("webdriver.chrome.driver", "/Users/kuba/TLA/Selenium/B-7/libs/drivers/chromedriver");
@@ -20,6 +21,13 @@ public class _01_ClassTask_Solved {
 
         driver.get("http://automation.techleadacademy.io/#/");
 
+        List<WebElement> ls = driver.findElements(By.xpath("//a[@class='navbar-brand ml-3']"));
+        for(WebElement each: ls){
+            //System.out.println(each.getText());
+        }
+
+        System.out.println(driver.findElement(By.xpath("//a[@href='#/selectclass']")).getText());
+        System.out.println(ls.get(4).getText());
 
 
         driver.close();
