@@ -1,11 +1,13 @@
-package day09.instructor;
+package day10.instructor;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class _03_Xpath_Completed {
+public class _01_Xpath_Completed {
+    //NOTE: solve ClassTask2 from previous day
+
     public static void main(String[] args) {
-        System.setProperty("webdriver.chrome.driver", "/Users/kuba/Desktop/Selenium/libs/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "/Users/kuba/TLA/Selenium/B-7/libs/drivers/chromedriver");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
@@ -25,5 +27,7 @@ public class _03_Xpath_Completed {
 
 
         driver.close();
+
+        //NOTE: ClassTask1
     }
 }
