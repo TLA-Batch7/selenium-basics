@@ -9,5 +9,7 @@ public class _02_ClassTask {
      *      password: user123
      *  3. Add a statement under Dont's section
      *  4. Verify your new statement was added
+     *  5. Delete newly added statement
+     *  6. Verify it was deleted
      */
 }
