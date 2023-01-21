@@ -15,11 +15,29 @@ public class _01_ClassTask_Solved {
      *      2. Select option "Yellow" only
      */
 
-    public static void main(String[] args) {
-        System.setProperty("webdriver.chrome.driver", "path");
+    public static void main(String[] args) throws InterruptedException {
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\mder\\OneDrive\\Documents\\Selenium\\Drivers\\chromedriver_win32_updated\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
-
+        driver.manage().window().maximize();
         driver.get("http://automation.techleadacademy.io/#/selectclass");
+
+//        1. Print out all options
+        Select select = new Select(driver.findElement(By.name("select2")));
+        List<WebElement> allOptions = select.getOptions();
+        allOptions.forEach(each-> System.out.println(each.getText()));
+
+//        2. Select option "Yellow" only
+        select.selectByValue("Yellow");
+//        select.selectByIndex(8);
+//        select.selectByVisibleText("Yellow");
+
+
+        //Verify that "Yellow" is displayed
+        System.out.println(driver.findElement(By.id("select2-selected-value")).isDisplayed());
+
+        Thread.sleep(2000);
+
+        driver.close();
 
 
     }
