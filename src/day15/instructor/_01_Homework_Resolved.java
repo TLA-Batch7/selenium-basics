@@ -28,6 +28,62 @@ public class _01_Homework_Resolved {
 
         driver.get("http://automation.techleadacademy.io/#/multiplewindow");
 
+        //1. Print out texts of each button on the page (Launch TLA, Launch Google, Launch Facebook)
+        List<WebElement> btns = driver.findElements(By.xpath("//a[starts-with(@class, 'btn')]"));
+        btns.forEach(each -> System.out.println(each.getText()));
+
+        //2. Click on "Launch Facebook"
+        driver.findElement(By.xpath("//a[starts-with(@class, 'btn') and text()='Launch Facebook']")).click();
+
+        //3. Print out text "Connect with friend and the world..."
+        String mainWindowId = driver.getWindowHandle();
+
+        Set<String> allWindows = driver.getWindowHandles();
+
+        for(String each: allWindows){
+            if (!each.equals(allWindows))
+                driver.switchTo().window(each);
+        }
+
+        System.out.println(driver.findElement(By.tagName("h2")).getText());
+
+        //4. Close facebook window
+        driver.close();
+
+        //Return to the main window
+        driver.switchTo().window(mainWindowId);
+
+        //Click on "Launch Google" button
+        driver.findElement(By.xpath("//a[starts-with(@class, 'btn') and text()='Launch Google']")).click();
+
+        //Print out title of the page
+        allWindows = driver.getWindowHandles();
+
+        for(String each: allWindows){
+            if (!each.equals(allWindows))
+                driver.switchTo().window(each);
+        }
+
+        System.out.println(driver.getTitle());
+
+        driver.switchTo().window(mainWindowId);
+
+        //Click on "Launch TLA"
+        driver.findElement(By.xpath("//a[starts-with(@class, 'btn') and text()='Launch TLA']")).click();
+
+        //Print out text of navigation buttons
+        allWindows = driver.getWindowHandles();
+
+        for(String each: allWindows){
+            driver.switchTo().window(each);
+            if (driver.getTitle().contains("Tech Lead"))
+                break;
+        }
+
+        driver.manage().window().maximize();
+
+        List<WebElement> navBtns = driver.findElements(By.xpath("//div[@id='lp-pom-box-346']/div[@class='lp-element lp-pom-text nlh']/p"));
+        navBtns.forEach(each -> System.out.println(each.getText()));
 
 
         Thread.sleep(3000);
