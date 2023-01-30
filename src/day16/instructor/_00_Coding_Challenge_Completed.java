@@ -1,8 +1,6 @@
 package day16.instructor;
 
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class _00_Coding_Challenge_Completed {
     /**
@@ -10,12 +8,12 @@ public class _00_Coding_Challenge_Completed {
      * and returns only unique ones in an array.
      * Example: "One, two, three, four, two, one" -> [three, four]
      *
-     * Try to finish until 9:30AM
      */
 
     public static void main(String[] args) {
-        String test = "One, two, three, four, two, one";
+        String test = "One, two, three, four, two, one, seven, four";
 
+        System.out.println(Arrays.toString(uniqueWithoutSet(test)));
 
     }
 
@@ -32,7 +30,22 @@ public class _00_Coding_Challenge_Completed {
 
     public static String[] uniqueWithoutSet(String str){
         String[] words = str.split(", ");
+        ArrayList<String> result = new ArrayList<>();
+        ArrayList<String> hasDuplicates = new ArrayList<>();
 
-        return words;
+        for(int i = 0; i < words.length; i++){
+
+            if (i != words.length - 1){
+
+                for(int j = i + 1; j < words.length; j++){
+                    if (words[i].equalsIgnoreCase(words[j]))
+                        hasDuplicates.add(words[i].toLowerCase());
+                }
+            }
+            if (!hasDuplicates.contains(words[i].toLowerCase()))
+                result.add(words[i]);
+        }
+
+        return result.toArray(new String[result.size()]);
     }
 }
