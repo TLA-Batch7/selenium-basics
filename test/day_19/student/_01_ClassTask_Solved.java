@@ -12,5 +12,18 @@ public class _01_ClassTask_Solved {
      *      Reminder: You can create multiple test cases with different test data
      */
 
+    public String returnInitalsInCaps(String txt){
+        if(txt == null || txt.equals("")){
+            return "invalid input";
+        }
+
+        String[] arr = txt.split(" ");
+        String result = "";
+
+        for(String each: arr){
+            result += each.charAt(0);
+        }
+        return result.toUpperCase();
+    }
 
 }
