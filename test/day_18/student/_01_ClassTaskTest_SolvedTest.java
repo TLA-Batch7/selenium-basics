@@ -8,7 +8,7 @@ public class _01_ClassTaskTest_SolvedTest {
         int num1 = 13;
         int num2 = 4;
 
-        _01_ClassTask_Solved basic2 = new _01_ClassTask_Solved();
+        _01_ClassTask_SolvedNEW basic2 = new _01_ClassTask_SolvedNEW();
 
         int expected = num1 * num2;
         int actual = basic2.multiply(num1, num2);
@@ -21,7 +21,7 @@ public class _01_ClassTaskTest_SolvedTest {
         double num1 = 12;
         double num2 = 3;
 
-        _01_ClassTask_Solved basic2 = new _01_ClassTask_Solved();
+        _01_ClassTask_SolvedNEW basic2 = new _01_ClassTask_SolvedNEW();
 
         double expected = num1 / num2;
         double actual = basic2.divide(num1,num2);
