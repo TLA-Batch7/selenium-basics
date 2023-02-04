@@ -1,0 +1,34 @@
+URL: https://interview-prep-test.herokuapp.com/
+
+US1002 Login page
+    User should be able to login with valid credentials
+    username: test@yahoo.com
+    password: test123
+
+
+--------------------
+
+US1003 Verify dashboard buttons are displayed: All topics, coding, soft skills, java
+
+
+--------------------
+
+US1004 Verify header
+    Verify the header at th top of page is "Interview Prep"
+
+
+--------------------
+
+US1005 Add comment in Do section
+    User should be able to add a comment in Do section
+
+
+--------------------
+
+US1006 Edit comment in Do Section
+    User should be able to edit their comment they recently added
+
+ ---------------------
+
+US1006 Delete comment in Do Section
+    User should be able to delete their comment they recently added
