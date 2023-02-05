@@ -21,5 +21,49 @@ public class _01_ClassTask_Solved {
      *          URL: http://automation.techleadacademy.io/#/inputs
      */
 
+    @Test(testName = "US1001: Test Double click button", description = "Verify double click button is working")
+    public void test01(){
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\mder\\OneDrive\\Documents\\Selenium\\Drivers\\chromedriver_win32_updated\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+
+        driver.get("http://automation.techleadacademy.io/#/actionclass");
+
+        Actions actions = new Actions(driver);
+
+        WebElement dblClickBtn = driver.findElement(By.xpath("//button[@class='btn btn-warning m-2 btn-lg']"));
+        actions.doubleClick(dblClickBtn).perform();
+
+        Assert.assertTrue(driver.findElement(By.xpath("//button[text()='Double clicked']")).isDisplayed());
+        Assert.assertEquals(dblClickBtn.getText(),"Double clicked");
+
+        driver.close();
+    }
+
+    @Test(testName = "US1002:Two Input Fields Section ", description = "Verify user can sum 2 numbers correctly in Two Input Fields section")
+    public void test02(){
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\mder\\OneDrive\\Documents\\Selenium\\Drivers\\chromedriver_win32_updated\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+
+        driver.get("http://automation.techleadacademy.io/#/inputs");
+
+        String num1 = "5";
+        String num2 = "6";
+
+        String expectedSum = "11";
+
+        driver.findElement(By.id("a")).sendKeys(num1);
+        driver.findElement(By.id("b")).sendKeys(num2);
+        driver.findElement(By.name("button2")).click();
+
+        String actual = driver.findElement(By.xpath("//span[@name='answer2']")).getText();
+
+        Assert.assertEquals(actual,expectedSum);
+
+        driver.close();
+    }
 
 }
