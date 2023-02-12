@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Suite">
+    <test name="parameters test">
+        <parameter name="username" value="user"/>
+        <parameter name="password" value="user123"/>
+        <parameter name="chromePath" value="C:\Users\mder\OneDrive\Documents\Selenium\Drivers\chromedriver_win32 (1)\chromedriver.exe">
+        </parameter>
+        <classes>
+            <class name="day_23.instructor._01_Parameters_Completed"/>
+        </classes>
+    </test>
+</suite>
