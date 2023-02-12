@@ -10,6 +10,7 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
+
 public class _01_Parameters_Completed {
     //NOTE: Update following path to match your chromedriver location
     String path = "";
@@ -79,8 +80,9 @@ public class _01_Parameters_Completed {
         System.out.println("Value passed ::" + b);
     }
 
-    @Test
+
     @Parameters({"username-1","username-2"})
+    @Test
     void paramTest(@Optional("value") String user1, @Optional ("value 2") String user2){
         System.out.println(user1);
         System.out.println(user2);
